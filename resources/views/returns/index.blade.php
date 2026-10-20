@@ -4,14 +4,14 @@
 
 @section('content')
 <div class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-guide="returns-header">
         <div>
             <h2 class="text-2xl font-bold text-gray-900">Pengembalian Buku</h2>
             <p class="text-gray-600 mt-1">Kelola pengembalian buku yang sedang dipinjam</p>
         </div>
     </div>
 
-    <div class="bg-white rounded-lg border border-gray-200 p-4">
+    <div class="bg-white rounded-lg border border-gray-200 p-4" data-guide="returns-filters">
         <form method="GET" class="flex gap-4">
             <div class="flex-1 relative max-w-md">
                 <label for="search" class="sr-only">Cari</label>
@@ -30,7 +30,7 @@
         </form>
     </div>
 
-    <section class="bg-white rounded-lg border border-gray-200">
+    <section class="bg-white rounded-lg border border-gray-200" data-guide="returns-active">
         <div class="px-6 py-4 border-b border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
@@ -116,7 +116,7 @@
         @endif
     </section>
 
-    <section class="bg-white rounded-lg border border-gray-200 mt-6">
+    <section class="bg-white rounded-lg border border-gray-200 mt-6" data-guide="returns-history">
         <div class="px-6 py-4 border-b border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">

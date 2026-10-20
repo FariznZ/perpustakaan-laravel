@@ -25,7 +25,7 @@
     </div>
     @endif
 
-    <form action="{{ route('books.store') }}" method="POST" class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 space-y-6 shadow-xs">
+    <form action="{{ route('books.store') }}" method="POST" class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 space-y-6 shadow-xs" data-guide="book-form">
         @csrf
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -174,7 +174,7 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-end gap-3 pt-4 border-t border-gray-100">
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-gray-100" data-guide="book-form-actions">
             <a href="{{ route('books.index') }}" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
                 Batal
             </a>

@@ -1,6 +1,6 @@
-<aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto" aria-label="Navigasi utama">
-    <div class="flex flex-col h-full">
-        <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+<aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:bottom-auto lg:h-screen lg:transform-none lg:z-auto" aria-label="Navigasi utama">
+    <div class="flex flex-col h-full overflow-hidden">
+        <div class="flex items-center justify-between h-16 flex-shrink-0 px-4 border-b border-gray-200">
             <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 text-primary-700 font-bold text-lg">
                 <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center shadow-xs">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -16,7 +16,7 @@
             </button>
         </div>
 
-        <nav class="flex-1 p-4 space-y-1 overflow-y-auto" aria-label="Menu navigasi">
+        <nav class="flex-1 min-h-0 p-4 space-y-1 overflow-y-auto overscroll-contain" aria-label="Menu navigasi">
             <div class="px-3 pb-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider">Menu Utama</div>
 
             <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-primary-50 text-primary-700 font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900' }} flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors">
@@ -71,7 +71,7 @@
             @endif
         </nav>
 
-        <div class="p-3 border-t border-gray-200 bg-gray-50/50">
+        <div class="flex-shrink-0 p-3 border-t border-gray-200 bg-gray-50/50">
             @auth
             <div class="p-2.5 rounded-xl bg-white border border-gray-200 shadow-xs mb-2">
                 <div class="flex items-center justify-between">

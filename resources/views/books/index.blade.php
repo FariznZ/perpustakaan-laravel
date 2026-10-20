@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-guide="books-header">
         <div>
             <div class="flex items-center gap-2">
                 <h2 class="text-2xl font-bold text-gray-900">Katalog Buku</h2>
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Filter & Pencarian -->
-    <div class="bg-white rounded-lg border border-gray-200 p-4">
+    <div class="bg-white rounded-lg border border-gray-200 p-4" data-guide="books-filters">
         <form method="GET" class="flex flex-col sm:flex-row gap-4">
             <div class="flex-1 relative">
                 <label for="search" class="sr-only">Cari buku</label>
@@ -91,7 +91,7 @@
     </div>
 
     <!-- Grid Koleksi Buku -->
-    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden" data-guide="books-grid">
         @if ($books->count() > 0)
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
             @foreach ($books as $book)

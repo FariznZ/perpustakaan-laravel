@@ -6,8 +6,7 @@
 <div class="space-y-6">
 
     <!-- Role-Based Welcome Banner -->
-    <div class="relative overflow-hidden rounded-2xl {{ auth()->user()->isAdmin() ? 'bg-gradient-to-r from-indigo-900 via-indigo-800 to-primary-900' : 'bg-gradient-to-r from-emerald-900 via-teal-800 to-primary-900' }} text-white p-6 sm:p-8 shadow-sm">
-        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="relative overflow-hidden rounded-2xl {{ auth()->user()->isAdmin() ? 'bg-indigo-800' : 'bg-emerald-800' }} text-white p-6 sm:p-8 shadow-sm">
         <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold {{ auth()->user()->isAdmin() ? 'bg-indigo-400/20 text-indigo-200 border border-indigo-400/30' : 'bg-emerald-400/20 text-emerald-200 border border-emerald-400/30' }} mb-3">
@@ -30,7 +29,7 @@
             </div>
 
             <!-- Quick Action Buttons Based on Role -->
-            <div class="flex flex-wrap items-center gap-2.5">
+            <div class="guide-actions flex flex-wrap items-center gap-2.5" data-guide="dashboard-actions">
                 @if(auth()->user()->isAdmin())
                     <a href="{{ route('books.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-indigo-900 text-xs font-bold hover:bg-indigo-50 shadow-sm transition-all">
                         <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +74,7 @@
     </div>
 
     <!-- Main Metric Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="guide-stats grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-guide="dashboard-stats">
         <article class="bg-white rounded-xl border border-gray-200 p-5 shadow-xs">
             <div class="flex items-center justify-between">
                 <div>
@@ -173,7 +172,7 @@
     </div>
 
     <!-- Active Loans Table -->
-    <section class="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden">
+    <section class="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden" data-guide="dashboard-loans">
         <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
             <div>
                 <h3 class="text-base font-bold text-gray-900">Sirkulasi Pinjaman Berjalan</h3>

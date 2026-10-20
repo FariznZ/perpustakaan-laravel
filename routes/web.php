@@ -19,6 +19,28 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
+    Route::post('guide/seen', function () {
+        $data = request()->validate([
+            'page_key' => ['required', 'string', 'max:100'],
+        ]);
+
+        $now = now();
+
+        \Illuminate\Support\Facades\DB::table('user_guide_progress')->upsert(
+            [[
+                'user_id' => request()->user()->id,
+                'page_key' => $data['page_key'],
+                'seen_at' => $now,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]],
+            ['user_id', 'page_key'],
+            ['seen_at', 'updated_at']
+        );
+
+        return response()->noContent();
+    })->name('guide.seen');
+
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Operational Sirkulasi (Peminjaman & Pengembalian)
@@ -49,6 +71,11 @@ Route::middleware('auth')->group(function () {
     // Catalog & Members (Read-only for Petugas, with CRUD actions visible to Admin)
     Route::resource('books', BookController::class)->only(['index', 'show']);
     Route::resource('members', MemberController::class)->only(['index']);
+});
+
+Route::get('/__preview_login', function () {
+    \Illuminate\Support\Facades\Auth::loginUsingId(1);
+    return redirect('/'.ltrim((string) request('to', ''), '/'));
 });
 
 Route::fallback(function () {

@@ -9,7 +9,14 @@
             <h1 class="text-lg md:text-xl font-semibold text-gray-900">@yield('title', 'Perpustakaan')</h1>
         </div>
 
-        <div class="flex items-center gap-3 sm:gap-4">
+        <div class="flex items-center gap-2 sm:gap-4">
+            <button type="button" data-guide-start class="inline-flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:text-primary-700 hover:bg-primary-50 border border-transparent hover:border-primary-100 transition-colors" aria-label="Buka panduan penggunaan" title="Panduan">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 1.734-2 3.272-2 1.933 0 3.5 1.343 3.5 3 0 1.657-1.567 3-3.5 3-.6 0-1.164.132-1.657.365M12 17h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="hidden sm:inline">Panduan</span>
+            </button>
+
             <div class="hidden md:flex items-center gap-2 text-xs font-medium text-gray-500 bg-gray-100/80 px-3 py-1.5 rounded-full">
                 <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>

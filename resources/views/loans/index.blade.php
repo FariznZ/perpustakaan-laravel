@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-guide="loans-header">
         <div>
             <h2 class="text-2xl font-bold text-gray-900">Peminjaman Buku</h2>
             <p class="text-gray-600 mt-1">Kelola peminjaman buku yang sedang aktif</p>
@@ -17,7 +17,7 @@
         </a>
     </div>
 
-    <div class="bg-white rounded-lg border border-gray-200 p-4">
+    <div class="bg-white rounded-lg border border-gray-200 p-4" data-guide="loans-filters">
         <form method="GET" class="flex gap-4">
             <div class="flex-1 relative max-w-md">
                 <label for="search" class="sr-only">Cari peminjaman</label>
@@ -36,7 +36,7 @@
         </form>
     </div>
 
-    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden" data-guide="loans-table">
         @if ($loans->isNotEmpty())
         <div class="overflow-x-auto">
             <table class="w-full" role="table">

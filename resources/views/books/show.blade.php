@@ -8,7 +8,7 @@
         <div>
             <a href="{{ route('books.index') }}" class="text-sm text-gray-500 hover:text-gray-700 mb-2 inline-block">&larr; Kembali ke Katalog</a>
             <h2 class="text-2xl font-bold text-gray-900">{{ $book->title }}</h2>
-        <div class="flex items-center gap-2 flex-wrap">
+        <div class="flex items-center gap-2 flex-wrap" data-guide="book-header-actions">
             @if(auth()->user()->isAdmin())
             <a href="{{ route('books.edit', $book) }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
                 <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@
 
     <div class="grid lg:grid-cols-3 gap-6">
         <div class="lg:col-span-1">
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden" data-guide="book-meta">
                 <div class="aspect-[3/4] bg-gray-100 relative">
                     @if ($book->cover_url)
                     <img src="{{ $book->cover_url }}" alt="{{ $book->title }}" class="w-full h-full object-cover">
@@ -81,7 +81,7 @@
         </div>
 
         <div class="lg:col-span-2 space-y-6">
-            <section class="bg-white rounded-lg border border-gray-200 p-6">
+            <section class="bg-white rounded-lg border border-gray-200 p-6" data-guide="book-info">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">Informasi Buku</h3>
                 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -113,7 +113,7 @@
             @endif
 
             @if ($book->available > 0)
-            <section class="bg-white rounded-lg border border-gray-200 p-6">
+            <section class="bg-white rounded-lg border border-gray-200 p-6" data-guide="book-loan-form">
                 <form action="{{ route('loans.store') }}" method="POST" class="space-y-4">
                     @csrf
                     <input type="hidden" name="book_id" value="{{ $book->id }}">

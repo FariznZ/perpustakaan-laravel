@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-guide="users-header">
         <div>
             <div class="flex items-center gap-2">
                 <h2 class="text-2xl font-bold text-gray-900">Manajemen Staf & Petugas</h2>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Metric Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" data-guide="users-stats">
         <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-xs flex items-center justify-between">
             <div>
                 <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Staf</p>
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Role Explanation Banner -->
-    <div class="p-4 rounded-xl bg-gradient-to-r from-indigo-50 via-sky-50 to-emerald-50 border border-indigo-100/80 text-xs text-gray-700">
+    <div class="p-4 rounded-xl bg-gradient-to-r from-indigo-50 via-sky-50 to-emerald-50 border border-indigo-100/80 text-xs text-gray-700" data-guide="users-roles">
         <h3 class="font-bold text-gray-900 mb-2 flex items-center gap-1.5 text-sm">
             <span>ℹ️</span> Panduan Hak Akses Sistem
         </h3>
@@ -66,7 +66,7 @@
     </div>
 
     <!-- Staff Table -->
-    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs">
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs" data-guide="users-table">
         <div class="px-6 py-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h3 class="font-bold text-gray-900 text-base">Daftar Akun Staf Perpustakaan</h3>
             <form method="GET" class="flex items-center gap-2">
