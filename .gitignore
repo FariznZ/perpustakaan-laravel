@@ -14,3 +14,18 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Laravel runtime / generated files
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+
+# Frontend build output (jalankan `npm run build` setelah clone)
+/public/build
