@@ -73,10 +73,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('members', MemberController::class)->only(['index']);
 });
 
-Route::get('/__preview_login', function () {
-    \Illuminate\Support\Facades\Auth::loginUsingId(1);
-    return redirect('/'.ltrim((string) request('to', ''), '/'));
-});
+// Public interactive project presentation
+Route::get('/presentasi', fn () => view('presentation.index'))->name('presentation');
 
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);

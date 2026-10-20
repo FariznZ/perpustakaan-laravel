@@ -312,6 +312,10 @@
             <!-- Footer -->
             <div class="text-center text-xs text-gray-400 mt-6 pt-4">
                 Sistem Informasi Perpustakaan &bull; Versi 1.0.0
+                <span class="mx-2 text-gray-300">|</span>
+                <a href="{{ route('presentation') }}" class="font-semibold text-primary-600 transition hover:text-primary-700">
+                    Lihat Presentasi
+                </a>
             </div>
         </div>
     </div>
